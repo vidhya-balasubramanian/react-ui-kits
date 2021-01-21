@@ -8,7 +8,7 @@ import {
   UserOutlined,
 } from "@ant-design/icons";
 
-const App = () => {
+const AntDesign = () => {
   const { Header, Content, Sider } = Layout;
   const { SubMenu } = Menu;
 
@@ -45,4 +45,4 @@ const App = () => {
   );
 };
 
-export default App;
+export default AntDesign;
