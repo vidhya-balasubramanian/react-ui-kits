@@ -135,7 +135,6 @@ const AntDesign = () => {
   };
 
   const handleSwitchChange = (checked) => {
-    debugger
     //less variables that will be used here must be declared in themeVariables on config-overrides.js
     window.less
       .modifyVars({
