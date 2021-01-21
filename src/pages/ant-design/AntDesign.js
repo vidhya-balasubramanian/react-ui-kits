@@ -21,9 +21,6 @@ import {
 
 import Login from "./components/Login";
 
-import "antd/dist/antd.css";
-
-
 const { Header, Sider, Content } = Layout;
 const AntDesign = () => {
   const [isModalVisible, setIsModalVisible] = useState(false);

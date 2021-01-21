@@ -6,6 +6,7 @@ import AppRouter from './Router';
 import reportWebVitals from './reportWebVitals';
 
 import './index.css';
+import "antd/dist/antd.css";
 
 ReactDOM.render(
     <AppRouter />,
