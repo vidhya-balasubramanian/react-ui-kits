@@ -5,12 +5,10 @@ import AppRouter from './Router';
 
 import reportWebVitals from './reportWebVitals';
 
-import 'antd/dist/antd.css';
+import './index.css';
 
 ReactDOM.render(
-  <React.StrictMode>
-    <AppRouter />
-  </React.StrictMode>,
+    <AppRouter />,
   document.getElementById('root')
 );
 
