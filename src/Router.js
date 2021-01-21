@@ -1,7 +1,7 @@
 import React from "react";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 
-import Home from './pages/Home';
+// import Home from './pages/Home';
 import AntDesign from './pages/ant-design/AntDesign';
 
 const AppRouter = () => {
@@ -9,7 +9,7 @@ const AppRouter = () => {
     <Router>
       <Switch>
         <Route exact path="/">
-          <Home />
+          <AntDesign />
         </Route>
         <Route path="/ant-design">
           <AntDesign />
