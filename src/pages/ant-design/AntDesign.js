@@ -4,11 +4,16 @@ import {
   Menu,
   Table,
   Tag,
-  Space,
   Card,
   Modal,
   Button,
   Spin,
+  Divider,
+  Switch,
+  Checkbox,
+  Space,
+  Slider,
+  Alert,
 } from "antd";
 import {
   MenuUnfoldOutlined,
@@ -16,8 +21,7 @@ import {
   UserOutlined,
   VideoCameraOutlined,
   UploadOutlined,
-} from '@ant-design/icons';
-
+} from "@ant-design/icons";
 
 import Login from "./components/Login";
 
@@ -130,12 +134,27 @@ const AntDesign = () => {
     }, 4000);
   };
 
+  const handleSwitchChange = (checked) => {
+    debugger
+    //less variables that will be used here must be declared in themeVariables on config-overrides.js
+    window.less
+      .modifyVars({
+        "@primary-color": checked ? "red" : "blue",
+      })
+      .then(() => {
+        console.log("color changed!");
+      })
+      .catch((error) => {
+        console.error(error);
+      });
+  };
+
   return (
-    <Layout style={{ height: '100% '}}>
-      {isLogin ? 
+    <Layout style={{ height: "100% " }}>
+      {isLogin ? (
         <Sider trigger={null} collapsible collapsed={collapsed}>
           <div className="logo" />
-          <Menu theme="dark" mode="inline" defaultSelectedKeys={['1']}>
+          <Menu theme="dark" mode="inline" defaultSelectedKeys={["1"]}>
             <Menu.Item key="1" icon={<UserOutlined />}>
               nav 1
             </Menu.Item>
@@ -146,16 +165,31 @@ const AntDesign = () => {
               nav 3
             </Menu.Item>
           </Menu>
-        </Sider> : null }
-        <Layout className="site-layout">
-          <Header className="site-layout-background flex1" style={{ backgroundColor: "#fff" }}>
-          {isLogin ? <>
-            {React.createElement(collapsed ? MenuUnfoldOutlined : MenuFoldOutlined, {
-              className: 'trigger',
-              onClick: toggle,
-            })} </> : null }
-            <div></div>
-            {isLogin ? (
+        </Sider>
+      ) : null}
+      <Layout className="site-layout">
+        <Header
+          className="site-layout-background flex1"
+          style={{ backgroundColor: "#fff" }}
+        >
+          <Menu theme="dark" mode="horizontal" defaultSelectedKeys={["2"]}>
+            <Menu.Item key="1">nav 1</Menu.Item>
+            <Menu.Item key="2">nav 2</Menu.Item>
+            <Menu.Item key="3">nav 3</Menu.Item>
+          </Menu>
+          {isLogin ? (
+            <>
+              {React.createElement(
+                collapsed ? MenuUnfoldOutlined : MenuFoldOutlined,
+                {
+                  className: "trigger",
+                  onClick: toggle,
+                }
+              )}{" "}
+            </>
+          ) : null}
+          <div></div>
+          {isLogin ? (
             <Button
               type="default"
               onClick={() => {
@@ -167,8 +201,8 @@ const AntDesign = () => {
           ) : (
             false
           )}
-          </Header>
-          <Content style={{ margin: "40px 16px" }}>
+        </Header>
+        <Content style={{ margin: "40px 16px" }}>
           {!isLogin ? (
             <div>
               <Login onLoginSubmit={onLoginSubmit} />
@@ -188,14 +222,34 @@ const AntDesign = () => {
             </>
           )}
 
+          <div style={{ padding: 50 }}>
+            <div style={{ textAlign: "center" }}>
+              <Space>
+                Change Color
+                <Switch onChange={handleSwitchChange} />
+              </Space>
+            </div>
+            <Divider />
+            <div>
+              <Space>
+                <Checkbox defaultChecked />
+                <Switch defaultChecked />
+              </Space>
+            </div>
+            <div>
+              <Slider defaultValue={30} />
+            </div>
+            <Alert message="Informational Notes" type="info" showIcon />
+          </div>
+
           {showSpin ? (
             <div className="position-center">
               <Spin />
             </div>
           ) : null}
         </Content>
-        </Layout>
       </Layout>
+    </Layout>
   );
 };
 
