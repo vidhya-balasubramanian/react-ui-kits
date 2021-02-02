@@ -18,32 +18,19 @@ const Home = (props) => {
   const navigationFunction = (path) => {
     if (path === 'ant_design') {
       props.history.push('/ant-design');
-    } else if (path === 'react_semantic_ui') {
-      props.history.push('/semantic-ui');
-    } else if (path === 'react_toolbox') {
-      props.history.push('/react-toolbox');
+    } else if (path === 'graph_ql') {
+      props.history.push('/graph-ql');
     }
   }
 
   return (
     <PageWrapper>
       <button type="button" onClick={() => navigationFunction('ant_design')}>Go to Ant design</button>
+      <button type="button" onClick={() => navigationFunction('graph_ql')}>Graph Ql Implementation</button>
+
     </PageWrapper>
   );
 }
 
 export default withRouter(Home);
 
-
-// Dropdown
-// button
-// tiles 
-// loader 
-// table 
-// search 
-// modal 
-// popover 
-// tooltip 
-// tabs 
-// checkbox 
-// radio button 
