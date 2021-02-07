@@ -27,7 +27,6 @@ const Home = (props) => {
     <PageWrapper>
       <button type="button" onClick={() => navigationFunction('ant_design')}>Go to Ant design</button>
       <button type="button" onClick={() => navigationFunction('graph_ql')}>Graph Ql Implementation</button>
-
     </PageWrapper>
   );
 }
