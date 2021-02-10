@@ -58,7 +58,7 @@ const VideoPlayer = (props) => {
 				onClick={(e) => openFullscreen(e.target)}
       >
 				 <source
-				src="http://techslides.com/demos/sample-videos/small.mp4"
+				src="https://res.cloudinary.com/demo/image/upload/kitten_fighting.gif"
 				type="video/mp4"
 			></source>
         
